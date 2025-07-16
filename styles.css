@@ -1,5 +1,16 @@
+:root {
+  --color-text-primary: hsl(30, 10%, 34%);
+  --color-text-heading: hsl(24, 5%, 18%);
+  --color-accent: hsl(14, 45%, 36%);
+  --color-preparation: hsl(332, 51%, 32%);
+  --color-border: hsl(30, 18%, 87%);
+  --color-bg-main: hsl(30, 54%, 90%);
+  --color-bg-card: white;
+  --color-bg-preparation: hsl(330, 100%, 98%);
+}
+
 body {
-  background-color: hsl(30, 54%, 90%);
+  background-color: var(--color-bg-main);
   font-family: "Outfit", sans-serif;
   margin: 0;
 }
@@ -26,19 +37,20 @@ body {
 }
 
 .receipt {
-  width: min(100%, 800px);
+  width: min(100%, 50rem);
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--color-bg-card);
   border-radius: 0;
-  padding: 0 2.5rem 2.5rem 2.5rem;
-  color: hsl(30, 10%, 34%);
+  padding: 0 clamp(1rem, 5vw, 2.5rem) clamp(1rem, 5vw, 2.5rem)
+    clamp(1rem, 5vw, 2.5rem);
+  color: var(--color-text-primary);
   font-weight: 300;
 }
 
 .receipt img {
   width: calc(100% + 80px);
-  margin-left: -2.5rem;
-  margin-bottom: 2.5rem;
+  margin-inline-start: -2.5rem;
+  margin-block-end: 2.5rem;
   border-radius: 0;
 }
 
@@ -51,8 +63,8 @@ body {
 
   .receipt img {
     width: 100%;
-    margin-left: 0;
-    margin-bottom: 0;
+    margin-inline-start: 0;
+    margin-block-end: 0;
     border-radius: 15px;
   }
 }
@@ -60,20 +72,21 @@ body {
 .receipt hr {
   border: none;
   height: 1px;
-  background-color: hsl(30, 18%, 87%);
-  margin: 2.5rem 0;
+  background-color: var(--color-border);
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0;
 }
 
 .receipt h1 {
-  color: hsl(24, 5%, 18%);
-  font-size: 2.25rem;
+  color: var(--color-text-heading);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 400;
   font-family: "Young Serif", sans-serif;
 }
 
 .receipt h2 {
   font-family: "Young Serif", sans-serif;
-  color: hsl(14, 45%, 36%);
+  color: var(--color-accent);
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 
 .receipt ul,
@@ -84,20 +97,23 @@ ol {
 
 .preparation {
   width: 100%;
-  background-color: hsl(330, 100%, 98%);
+  background-color: var(--color-bg-preparation);
   border-radius: 15px;
   padding: 1.5625rem 0 1.5625rem 1.5625rem;
   margin: 1.875rem 0 1.875rem 0;
 }
 
 .preparation h3 {
-  color: hsl(332, 51%, 32%);
+  color: var(--color-preparation);
   margin: 0;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
 }
 
-.preparation li {
+.preparation li,
+.ingredients li,
+.instructions li {
   position: relative;
-  padding-left: 1.875rem;
+  padding-left: clamp(1rem, 3vw, 1.875rem);
 }
 
 .receipt b {
@@ -108,7 +124,7 @@ ol {
   content: "•";
   position: absolute;
   left: 0;
-  color: hsl(332, 51%, 32%);
+  color: var(--color-preparation);
   font-weight: bold;
 }
 
@@ -116,13 +132,8 @@ ol {
   content: "•";
   position: absolute;
   left: 0;
-  color: hsl(14, 45%, 36%);
+  color: var(--color-accent);
   font-weight: bold;
-}
-
-.ingredients li {
-  position: relative;
-  padding-left: 1.875rem;
 }
 
 .instructions ol {
@@ -130,8 +141,6 @@ ol {
 }
 
 .instructions li {
-  position: relative;
-  padding-left: 1.875rem;
   counter-increment: instructions-counter;
 }
 
@@ -139,7 +148,7 @@ ol {
   content: counter(instructions-counter) ".";
   position: absolute;
   left: 0;
-  color: hsl(14, 45%, 36%);
+  color: var(--color-accent);
   font-weight: bold;
 }
 
@@ -150,13 +159,13 @@ ol {
 }
 
 .nutrition table td {
-  border-bottom: 1px solid hsl(30, 18%, 87%);
-  height: 3.125rem;
-  padding-left: 2.5rem;
+  border-bottom: 1px solid var(--color-border);
+  height: clamp(2.5rem, 5vw, 3.125rem);
+  padding-left: clamp(1rem, 4vw, 2.5rem);
 }
 
 .nutrition table td b {
-  color: hsl(14, 45%, 36%);
+  color: var(--color-accent);
 }
 
 footer {
