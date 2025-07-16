@@ -1,0 +1,172 @@
+body {
+  background-color: hsl(30, 54%, 90%);
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("assets/fonts/outfit/Outfit-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.receipt {
+  width: min(100%, 800px);
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 0;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+  color: hsl(30, 10%, 34%);
+  font-weight: 300;
+}
+
+.receipt img {
+  width: calc(100% + 80px);
+  margin-left: -2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 0;
+}
+
+@media (width >= 48em) {
+  .receipt {
+    margin: 6.25rem auto;
+    border-radius: 20px;
+    padding: 40px;
+  }
+
+  .receipt img {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    border-radius: 15px;
+  }
+}
+
+.receipt hr {
+  border: none;
+  height: 1px;
+  background-color: hsl(30, 18%, 87%);
+  margin: 2.5rem 0;
+}
+
+.receipt h1 {
+  color: hsl(24, 5%, 18%);
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-family: "Young Serif", sans-serif;
+}
+
+.receipt h2 {
+  font-family: "Young Serif", sans-serif;
+  color: hsl(14, 45%, 36%);
+}
+
+.receipt ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.preparation {
+  width: 100%;
+  background-color: hsl(330, 100%, 98%);
+  border-radius: 15px;
+  padding: 1.5625rem 0 1.5625rem 1.5625rem;
+  margin: 1.875rem 0 1.875rem 0;
+}
+
+.preparation h3 {
+  color: hsl(332, 51%, 32%);
+  margin: 0;
+}
+
+.preparation li {
+  position: relative;
+  padding-left: 1.875rem;
+}
+
+.receipt b {
+  font-weight: 600;
+}
+
+.preparation li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: hsl(332, 51%, 32%);
+  font-weight: bold;
+}
+
+.ingredients li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
+
+.ingredients li {
+  position: relative;
+  padding-left: 1.875rem;
+}
+
+.instructions ol {
+  counter-reset: instructions-counter;
+}
+
+.instructions li {
+  position: relative;
+  padding-left: 1.875rem;
+  counter-increment: instructions-counter;
+}
+
+.instructions li::before {
+  content: counter(instructions-counter) ".";
+  position: absolute;
+  left: 0;
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
+
+.nutrition table {
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.nutrition table td {
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+  height: 3.125rem;
+  padding-left: 2.5rem;
+}
+
+.nutrition table td b {
+  color: hsl(14, 45%, 36%);
+}
+
+footer {
+  margin: 0.9375rem;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
